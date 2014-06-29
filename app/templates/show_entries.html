@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% import "pagination.html" as p %}
+{% block body %}
+  <div class="row">
+      <div class="col-sm-8 blog-main">
+         {% for entry in entries %}
+            <div class="blog-post">
+              <h2 class="blog-post-title">{{ entry.title }}</h2><hr>
+              <p class="blog-post-meta">{{ entry.timestamp.strftime('%Y-%m-%d %H:%M') }}</p>
+              <p>{{ entry.text|safe }}</p>
+              <div><a href="{{ url_for('post', id=entry.id) }}">See Comment</a></div>
+            </div>
+          {% else %}
+              <div>No entries here so far</div>
+          {% endfor %}
+<!--          <div class="pagination">{{ p.pagination_widget(pagination, '.show_entries') }}</div>
+       --> </div>
+            <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+              <div class="sidebar-module sidebar-module-inset">
+                <h4>About</h4>
+                <p>Miniblog is a single file blog powered by Flask + SQLAlchemy + Bootstrap. No other extensions are used and there are more funtions to come.</p>
+              </div>
+            </div>
+  </div>
+{% endblock %}

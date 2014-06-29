@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Miniblog">
+    <meta name="author" content="Sicong Liu">
+
+    <title>Miniblog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{{ url_for('static', filename='css/blog.css') }}" rel="stylesheet">
+  </head>
+
+ <body>
+
+    <div class="blog-masthead">
+      <div class="container">
+        <nav class="blog-nav">
+          <a class="blog-nav-item active" href="{{ url_for('show_entries') }}">Home</a>
+          {% if not session.logged_in %}
+          <a class="blog-nav-item" href="{{ url_for('login') }}">Log in</a>
+          {% else %}
+          <a class="blog-nav-item" href="{{ url_for('add_entry') }}">Post</a>
+          <a class="blog-nav-item" href="{{ url_for('logout') }}">Log out</a>
+          {% endif %}
+        </nav>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="blog-header">
+        <h1 class="blog-title">Miniblog</h1>
+        <p class="lead blog-description">Powered by Flask and SQLAlchemy.</p>
+      </div>
+
+          {% for message in get_flashed_messages() %}
+          <div class="alert alert-info">{{ message }}</div>
+          {% endfor %}
+          
+{% block body %}{% endblock %}
+
+    <div class="blog-footer">
+      <p>Miniblog built by Sicong Liu</p>
+      <p>
+        <a href="#">Back to top</a>
+      </p>
+    </div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/docs.min.js') }}"></script>
+  </body>
+</html>

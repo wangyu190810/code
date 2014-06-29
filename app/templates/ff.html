@@ -1,0 +1,23 @@
+<div class="row">
+      <div class="col-sm-8 blog-main">
+        <div class="blog-post">
+              <h3 class="blog-post-title">{{ post.title }}</h3><hr>
+              <p>{{ post.text|safe }}</p>
+        </div>
+      {% for comment in comments %}
+        <div class="panel panel-default">
+          <div class="panel-body">
+          {{ comment.id|safe}}
+          </div>
+        </div>
+      {% endfor %}
+
+    <form action="{{ url_for('post', id=post.id) }}" method=post class=comment>
+      <dl>
+        <dt>Comment:
+        <dd><textarea name=reply rows=5 cols=40></textarea>
+        <dd><input type=submit value=Comment>
+      </dl>
+    </form>
+    </div>
+</div>
