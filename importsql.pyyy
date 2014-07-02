@@ -1,0 +1,54 @@
+#! /usr/bin/python
+#Filename: importsql.py
+#Author: wangyu190810
+#E-mail: wo190810401@gmail.com
+#Date: 2014-06-30
+#Description: 
+Location = ["geoname_id","continent_code","continent_name","country_iso_code","country_name","subdivision_iso_code","subdivision_name","city_name","metro_code","time_zone"]
+
+Blocks = ["network_start_ip","network_mask_length","geoname_id","registered_country_geoname_id","represented_country_geoname_id","postal_code","latitude","longitude","is_anonymous_proxy","is_satellite_provider"]
+
+
+set_tuple=Location
+
+
+import csv,sqlite3
+
+con = sqlite3.connect("itianpin/itianpin/app.db")
+cur = con.cursor()
+
+#for p in set_tuple:
+#    print p
+#
+with open("GeoLite2-City-Locations.csv","r") as fin:
+    dr = csv.DictReader(fin)
+#    for pp in dr:
+#        print pp
+#
+#    print type(dr) 
+    to_db = [(
+    i[set_tuple[0]],
+    i[set_tuple[1]],
+    i[set_tuple[2]],
+    i[set_tuple[3]],
+    i[set_tuple[4]],
+    i[set_tuple[5]],
+    i[set_tuple[6]],
+    i[set_tuple[7]],
+    i[set_tuple[8]],
+    i[set_tuple[9]]) for i in dr]
+
+#sql = "INSERT INTO ip_locations ('%s') "%(",".join(set_tuple))
+#
+#print sql
+#
+#sql=sql+"values (%s)"%to_db
+#
+#print sql
+print to_db[0]
+cur.executemany("INSERT INTO ip_locations (geoname_id,continent_code,continent_name,country_iso_code,country_name,subdivision_iso_code,subdivision_name,city_name,metro_code,time_zone) values (?,?,?,?,?,?,?,?,?,?);",to_db)
+
+con.commit()
+con.close()
+cur.close()
+
