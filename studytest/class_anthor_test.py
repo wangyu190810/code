@@ -14,22 +14,25 @@ class testAnthor(unittest.TestCase):
     anthor = App()
 
     def setUp(self):
-        pass
+        print "开始测试" 
+        self.teststr = ""
+        self.testint = 1
+        self.staticString = ""
 
     def treaDown(self):
-        pass
-
+        print "测试结束"
+        
     def test_String(self):
-        teststr = ""
-        assert type(self.anthor.stringInput()) == type(teststr)
+        print "test str"
+        assert type(self.anthor.stringInput()) == type(self.teststr)
 
     def test_Int(self):
-        testint = 1
-        assert type(self.anthor.intInput()) == type(testint)
+        print "test int"
+        assert type(self.anthor.intInput()) == type(self.testint)
 
     def test_staticStr(self):
-        staticString = ""
-        assert type(self.anthor.staticString()) == type(staticString)
+        print "static string"
+        assert type(self.anthor.staticString()) == type(self.staticString)
 
 if __name__ == "__main__":
     unittest.main()
