@@ -1,13 +1,13 @@
 #! /usr/bin/python
 #-*- coding:utf-8 -*-
-#Filename: gittest.py
+#Filename: gittest3.py
 #Author: wangyu190810
 #E-mail: wo190810401@gmail.com
 #Date: 2014-09-03
 #Description: 
 
-import os
+afas
 
-"""还是再不断地修改文件，希望达到好的效果
-再次修改这个文件""""
+asd
+f
 
