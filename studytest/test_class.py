@@ -6,11 +6,26 @@
 #Date: 2014-06-09
 #Description: 
 
+
+
+
+
 class TestClass:
+    def app(self,ccc=None):
+        if ccc is None:
+            assert ccc is None
+        else:
+            return ccc
+
     def test_one(self):
         x="this"
         assert "h" in x
     def test_two(self):
         x="hello"
         assert hasattr(x,"check")
+    def test_three(self):
+        self.app(ccc=123)
+
+    def test_four(self):
+        self.app()
 
