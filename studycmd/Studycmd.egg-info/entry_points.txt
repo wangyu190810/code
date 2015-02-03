@@ -1,0 +1,5 @@
+[console_scripts]
+
+                studycmd = studycmd.prog:main
+            
+

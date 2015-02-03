@@ -1,0 +1,8 @@
+setup.py
+Studycmd.egg-info/PKG-INFO
+Studycmd.egg-info/SOURCES.txt
+Studycmd.egg-info/dependency_links.txt
+Studycmd.egg-info/entry_points.txt
+Studycmd.egg-info/top_level.txt
+studycmd/__init__.py
+studycmd/prog.py
