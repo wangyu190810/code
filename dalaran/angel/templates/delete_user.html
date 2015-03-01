@@ -1,0 +1,22 @@
+{% extends "layout.html"%}
+{%block body%}
+    <div class="container">
+         <div class="row">
+            <div class="col-sm-5 col-sm-offset-1 blog-sidebar">
+            </div>
+
+             <div class="col-sm-5">
+
+        <form action="" method="POST">
+            {%for user in users%}
+            <input type="radio" name="user_id" value="{{user.id}}">{{user.username}}</p>
+
+            {%endfor%}
+             <input type="submit"/>确定
+
+           </form>
+
+            </div>
+         </div>
+    </div>
+{% endblock %}

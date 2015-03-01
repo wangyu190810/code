@@ -1,0 +1,23 @@
+{% extends "layout.html"%}
+
+{%block body%}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+
+            </div>
+
+            <div class="col-md-4">
+                <h3>点击用户名查看</h3>
+
+                {% for user in users%}
+
+                <div class="span4">
+                    <a href="/del_user_perm_group/{{user.id}}">{{user.username}}</a>
+                </div>
+
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{%endblock%}

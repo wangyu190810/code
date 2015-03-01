@@ -1,0 +1,40 @@
+{%extends "layout.html"%}
+{%block body%}
+
+
+ <div class="container">
+        <div class="row">
+            <form method="POST">
+                <div class="col-md-4">
+                        <h3>解锁下面用户</h3>
+                        {%for locker in lockers%}
+                        <li><input type="radio" name="locker" value="{{locker.id}}">{{locker.username}}</option></li>
+                        {% endfor %}
+
+                </div>
+
+                <div class="col-md-4">
+                    <h3>锁定下面用户</h3>
+
+                    {% for user in users%}
+                      <li><input type="radio" name="unlocker" value="{{user.id}}">{{user.username}}</option></li>
+
+                {% endfor %}
+
+                    <p></p>
+                    <p></p>
+                    <p></p>
+                    <p></p>
+                    <button class="btn btn-lg btn-primary btn-block" type="submit">确定</button>
+                </div>
+
+
+            </form>
+        </div>
+
+
+
+    </div>
+
+
+{%endblock%}

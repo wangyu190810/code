@@ -1,0 +1,34 @@
+{% extends "layout.html"%}
+{% block body%}
+    <div class="container"> </div>
+        <div class="row">
+            <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+
+                用户直接拥有的权限
+                {% for perm in perms%}
+                    <li>{{perm.title}}</li>
+                {% endfor %}
+            </div>
+            <div class="col-sm-5 blog-main">
+                用户所在组
+        <ul>
+            {% for group, perms in group_perm_map.items() %}
+            <li>{{ group }}</li>
+              <ul>
+                  {% for perm in perms %}
+                      <li>{{perm}}</li>
+                  {% endfor %}
+              </ul>
+            {% endfor %}
+        </ul>
+
+
+    {% for perm in perms %}
+        <li><font horiz-adv-x="" color="red">{{perm.title}}</font></li></p>
+    {% endfor %}
+
+            </div>
+        </div>
+
+{% endblock %}
+

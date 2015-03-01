@@ -1,0 +1,27 @@
+{% extends "layout.html"%}
+
+{%block body%}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+
+            </div>
+
+            <div class="col-md-4">
+                <h3>点击用户名查看用户权限</h3>
+
+                {% for user in users%}
+
+                <p>
+
+                <a href="/check_user_perm_group/{{user.id}}">{{user.username}}</a>
+                </p>
+                {% endfor %}
+
+            </div>
+         </div>
+
+
+    </div>
+
+{%endblock%}

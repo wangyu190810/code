@@ -1,0 +1,24 @@
+{% extends "layout.html"%}
+
+<body>
+
+    <div class="container">
+         <div class="row">
+            <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+            </div>
+
+             <div class="col-sm-5">
+
+
+            <form action="" method="POST">
+                {%for perm in perms%}
+                <input type="radio" name="perm_id" value="{{perm.id}}">{{perm.title}}</p>
+
+                {%endfor%}
+                 <input type="submit"/>确定
+            </form>
+            </div>
+         </div>
+    </div>
+</body>
+</html>

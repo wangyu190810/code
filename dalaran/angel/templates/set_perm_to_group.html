@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+ {%block body%}
+        <div class="container">
+
+
+
+            <div class="row">
+                <form action="" method="POST">
+                <div class="col-sm-4 col-sm-offset-1 blog-sidebar">
+
+                    选择组<select name="group_id">
+
+                    {%for group in groups%}
+                    <option  value="{{group.id}}">{{group.title}}</option>
+                    {% endfor %}
+                    </select>
+                </div>
+
+                <div class="col-sm-5">
+
+                    选择权限
+                    {%for perm in perms %}
+                     <li>
+                    <input type="checkbox" name="perm_id" value="{{perm.id}}">{{perm.title}}</li>
+                    {% endfor%}
+                    <input type="submit" value="确定授权">
+
+                </div>
+                </form>
+            </div>
+         </div>
+
+{% endblock %}

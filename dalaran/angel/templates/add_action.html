@@ -1,0 +1,39 @@
+{% extends "layout.html"%}
+{%block body%}
+<div class="container" xmlns="http://www.w3.org/1999/html"
+     xmlns="http://www.w3.org/1999/html">
+    <div class="row">
+        <div class="col-md-4">
+
+        </div>
+        <div class="col-md-4">
+
+             <h3>菜单</h3>
+            {{message}}
+            <form action="" method="POST">
+                <p>菜单级数</p>
+                    <select  name="father_id">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                <p>属于项目</p>
+                    <select name="seq">
+                        <option value="1">第一项目</option>
+                        <option value="2">第二项目</option>
+                        <option value="3">第三项目</option>
+                        <option value="4">第四项目</option>
+                    </select>
+                <p>具体的名称</p>
+                <p>权限点<input type="text" name="action"></p>
+                <p><input type="submit" value="确定添加"></p>
+
+        </form>
+
+        </div>
+
+    </div>
+
+</div>
+{%endblock%}

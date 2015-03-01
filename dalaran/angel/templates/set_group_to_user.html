@@ -1,0 +1,27 @@
+
+{%extends "layout.html"%}
+{%block body%}
+
+<div class="container">
+     <form method="POST"/>
+    <div class="row">
+        <div class="col-md-4">
+
+             <select name="user_id">
+            下拉框选择需要分配组的用户
+            {%for user in users%}
+            <option  value="{{user.id}}">{{user.username}}</option>
+            {% endfor %}
+        </select>
+        </div>
+        <div class="col-md-4">
+        选择权限组
+         {%for group in groups %}
+        <li><input type="checkbox" name="group_id" value="{{group.id}}">{{group.title}}</li>
+         {% endfor%}
+            <input type="submit" value="确定授权">
+
+        </div>
+    </div>
+{%endblock%}
+

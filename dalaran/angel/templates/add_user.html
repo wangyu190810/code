@@ -1,0 +1,18 @@
+{%extends "layout.html"%}
+
+{% block body%}
+
+
+
+    <div class="container">
+
+      <form class="form-signin" role="form" method="POST">
+        <h2 class="form-signin-heading">创建用户</h2>
+        <input type="email" class="form-control"  name ="username" required autofocus>
+        <input type="password" class="form-control" placeholder="密码" name = "password" required>
+          <input type="password" class="form-control" placeholder="重复密码" name = "repassword" required>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+      </form>
+    </div>
+{% endblock%}
+</html>

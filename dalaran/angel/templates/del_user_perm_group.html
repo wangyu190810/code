@@ -1,0 +1,28 @@
+{% extends "layout.html"%}
+
+{%block body%}
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-5">
+
+            </div>
+            <div class="col-md-5">
+                  <form action="" method="post">
+            用户所在组
+            {% for group in groups%}
+            <input type="checkbox"name="group_id" value="{{group.id}}">{{group.title}}
+            {% endfor %}</p>
+            用户拥有的权限
+            {% for perm in perms %}
+            <input type="checkbox" name="perm_id" value="{{perm.id}}">{{perm.title}}
+            {% endfor %}<p></p>
+            确认撤销用户的权限<input type="submit" value="确定删除">
+            </form>
+
+            </div>
+        </div>
+
+
+    </div>
+        {% endblock %}

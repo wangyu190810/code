@@ -1,0 +1,51 @@
+{%extends "layout.html"%}
+
+
+{%block body%}
+<div class="container marketing">
+	<div class="row">
+		<div class="span12">
+			<h3 class="text-center">
+				授权系统权限分布
+			</h3>
+        </div>
+			<div class="row">
+				<div class="col-md-4">
+					<h3>
+						用户管理
+					</h3>
+
+						<p><a href="/add_user">创建用户</a></p>
+                        <p><a href="/delete_user">删除用户</a></p>
+                        <p><a href="/check_user_perm">查看用户权限</a></p>
+						<p><a href="/set_user_lock">用户登陆限制和解除</a></p>
+
+				</div>
+				<div class="col-md-4">
+					<h3>
+						权限管理
+					</h3>
+
+						<p><a href="/user_list">删除用户的权限</a></p>
+                        <p><a href="/set_perm_to_user">给用户分配权限</a></p>
+                        <p><a href="/set_group_to_user">给用户分配组</a></p>
+
+				</div>
+				<div class="col-md-4">
+					<h3>
+						权限构建
+					</h3>
+
+						<p><a href="/add_perm">添加权限</a></p>
+                        <p><a href="/set_perm_to_group">给组设置权限</a></p>
+                        <p><a href="/add_group">添加组</a></p>
+                        <p><a href="/logout">退出登录</a></p>
+				</div>
+			</div>
+
+	</div>
+</div>
+
+{% endblock %}
+
+
